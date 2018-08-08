@@ -43,9 +43,9 @@ void OnInit(void)
    SetIndexBuffer(0,ExtLowHighBuffer);
    SetIndexStyle(1,DRAW_HISTOGRAM,0,1,ExtColor2);
    SetIndexBuffer(1,ExtHighLowBuffer);
-   SetIndexStyle(2,DRAW_HISTOGRAM,0,4,ExtColor3);
+   SetIndexStyle(2,DRAW_HISTOGRAM,0,3,ExtColor3);
    SetIndexBuffer(2,ExtOpenBuffer);
-   SetIndexStyle(3,DRAW_HISTOGRAM,0,4,ExtColor4);
+   SetIndexStyle(3,DRAW_HISTOGRAM,0,3,ExtColor4);
    SetIndexBuffer(3,ExtCloseBuffer);
 //---
    SetIndexLabel(0,"Low/High");
@@ -144,6 +144,16 @@ int OnCalculate(const int rates_total,
    GlobalVariableSet("haClose2",ExtCloseBuffer[rates_total-3]);
    GlobalVariableSet("haHighLow2",ExtHighLowBuffer[rates_total-3]);
    GlobalVariableSet("haLowHigh2",ExtLowHighBuffer[rates_total-3]);
+
+   GlobalVariableSet("haOpen3",ExtOpenBuffer[rates_total-4]);
+   GlobalVariableSet("haClose3",ExtCloseBuffer[rates_total-4]);
+   GlobalVariableSet("haHighLow3",ExtHighLowBuffer[rates_total-4]);
+   GlobalVariableSet("haLowHigh3",ExtLowHighBuffer[rates_total-4]);
+
+   GlobalVariableSet("haOpen4",ExtOpenBuffer[rates_total-5]);
+   GlobalVariableSet("haClose4",ExtCloseBuffer[rates_total-5]);
+   GlobalVariableSet("haHighLow4",ExtHighLowBuffer[rates_total-5]);
+   GlobalVariableSet("haLowHigh4",ExtLowHighBuffer[rates_total-5]);
 
    return(rates_total);
   }
