@@ -134,7 +134,12 @@ int OnCalculate(const int rates_total,
       ExtCloseBuffer[i]=haClose;
      }
 //--- done
-
+   
+   GlobalVariableSet("haOpen0",ExtOpenBuffer[rates_total-1]);
+   GlobalVariableSet("haClose0",ExtCloseBuffer[rates_total-1]);
+   GlobalVariableSet("haHighLow0",ExtHighLowBuffer[rates_total-1]);
+   GlobalVariableSet("haLowHigh0",ExtLowHighBuffer[rates_total-1]);
+   
    GlobalVariableSet("haOpen1",ExtOpenBuffer[rates_total-2]);
    GlobalVariableSet("haClose1",ExtCloseBuffer[rates_total-2]);
    GlobalVariableSet("haHighLow1",ExtHighLowBuffer[rates_total-2]);
